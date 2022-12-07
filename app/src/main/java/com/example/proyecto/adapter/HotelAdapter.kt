@@ -28,10 +28,10 @@ class HotelAdapter: RecyclerView.Adapter<HotelAdapter.HotelViewHolder>() {
             //evento edit
             itemBinding.vistaFila.setOnClickListener {
                 val accion = HotelFragmentDirections
-                    .actionNavHotelToUpdateHotelFragment(hotel)//(restaurante)
+                    .actionNavHotelToUpdateHotelFragment(hotel)//(hotel)
                 itemView.findNavController().navigate(accion)
             }
-
+// uhu
         }
     }
 
@@ -55,6 +55,6 @@ class HotelAdapter: RecyclerView.Adapter<HotelAdapter.HotelViewHolder>() {
     override fun getItemCount(): Int{
         return listarHoteles.size
     }
-//listado de restaurantea p;ciommo
+//listado de hoteles
 }
 
