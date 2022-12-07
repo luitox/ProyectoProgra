@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <item name="addHotelFragment" type="id">Hotel</item>
-    <item name="updateHotelFragment" type="id">Hotel</item>
-</resources>
