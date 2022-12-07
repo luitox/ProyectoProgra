@@ -31,4 +31,10 @@
     <string name="si">SÍ</string>
     <string name="no">NO</string>
     <string name="seguroBorrar">¿Deseas borrar </string>
+    <string name="msg_precio">precio</string>
+    <string name="msg_Precio">Precio</string>
+    <string name="msg_NombreH">Nombre del Hotel</string>
+    <string name="menu_hotel">Hoteles</string>
+    <string name="msg_hotel_added">Hotel agregado</string>
+    <string name="msg_hotel_updated">Hotel actualizado</string>
 </resources>
