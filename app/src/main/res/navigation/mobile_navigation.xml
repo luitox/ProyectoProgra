@@ -25,10 +25,43 @@
     </fragment>
 
     <fragment
+        android:id="@+id/nav_hotel"
+        android:name="com.example.proyecto.ui.hotel.HotelFragment"
+        android:label="@string/menu_hotel"
+        tools:layout="@layout/fragment_hotel" >
+        <action
+            android:id="@+id/action_nav_hotel_to_addHotelFragment"
+            app:destination="@id/addHotelFragment" />
+        <action
+            android:id="@+id/action_nav_hotel_to_updateHotelFragment"
+            app:destination="@id/updateHotelFragment" />
+    </fragment>
+
+    <fragment
         android:id="@+id/nav_slideshow"
         android:name="com.example.proyecto.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
+    <fragment
+        android:id="@+id/addHotelFragment"
+        android:name="com.example.proyecto.ui.hotel.AddHotelFragment"
+        android:label="fragment_add_hotel"
+        tools:layout="@layout/fragment_add_hotel" >
+        <action
+            android:id="@+id/action_addHotelFragment_to_nav_hotel"
+            app:destination="@id/nav_hotel" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateHotelFragment"
+        android:name="com.example.proyecto.ui.hotel.UpdateHotelFragment"
+        android:label="fragment_update_hotel"
+        tools:layout="@layout/fragment_update_hotel" >
+        <action
+            android:id="@+id/action_updateHotelFragment_to_nav_hotel"
+            app:destination="@id/nav_hotel" />
+        <argument android:name="hotel"
+            app:argType="com.example.proyecto.model.Hotel"/>
+    </fragment>
     <fragment
         android:id="@+id/addRestauranteFragment"
         android:name="com.example.proyecto.ui.restaurante.AddRestauranteFragment"
