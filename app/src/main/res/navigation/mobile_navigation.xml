@@ -12,14 +12,41 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.example.proyecto.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:id="@+id/nav_restaurante"
+        android:name="com.example.proyecto.ui.restaurante.RestauranteFragment"
+        android:label="@string/menu_restaurante"
+        tools:layout="@layout/fragment_restaurante" >
+        <action
+            android:id="@+id/action_nav_restaurante_to_addRestauranteFragment"
+            app:destination="@id/addRestauranteFragment" />
+        <action
+            android:id="@+id/action_nav_restaurante_to_updateRestauranteFragment"
+            app:destination="@id/updateRestauranteFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_slideshow"
         android:name="com.example.proyecto.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
+    <fragment
+        android:id="@+id/addRestauranteFragment"
+        android:name="com.example.proyecto.ui.restaurante.AddRestauranteFragment"
+        android:label="fragment_add_restaurante"
+        tools:layout="@layout/fragment_add_restaurante" >
+        <action
+            android:id="@+id/action_addRestauranteFragment_to_nav_restaurante"
+            app:destination="@id/nav_restaurante" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateRestauranteFragment"
+        android:name="com.example.proyecto.ui.restaurante.UpdateRestauranteFragment"
+        android:label="fragment_update_restaurante"
+        tools:layout="@layout/fragment_update_restaurante" >
+        <action
+            android:id="@+id/action_updateRestauranteFragment_to_nav_restaurante"
+            app:destination="@id/nav_restaurante" />
+        <argument android:name="restaurante"
+            app:argType="com.example.proyecto.model.Restaurante"/>
+    </fragment>
 </navigation>

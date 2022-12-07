@@ -5,6 +5,7 @@
         android:id="@+id/action_logoff"
         android:icon="@drawable/ic_logoff"
         android:orderInCategory="100"
+        android:backgroundTint="#3F51B5"
         android:title="@string/action_settings"
         app:showAsAction="never|ifRoom" />
 </menu>
