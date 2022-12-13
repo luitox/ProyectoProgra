@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.proyecto.databinding.HotelFilaBinding
 import com.example.proyecto.databinding.RestauranteFilaBinding
 import com.example.proyecto.model.Hotel
+import com.example.proyecto.ui.hotel.HotelFragmentDirections
 import com.example.proyecto.model.Restaurante
 import com.example.proyecto.ui.restaurante.RestauranteFragmentDirections
 import com.example.proyecto.ui.restaurante.UpdateRestauranteFragmentDirections

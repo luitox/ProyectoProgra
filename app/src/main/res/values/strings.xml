@@ -10,9 +10,10 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
-    <string name="menu_home">Home</string>
+
     <string name="menu_restaurante">Restaurantes</string>
     <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_ic_hotel">Hoteles</string>
 
     <string name="msg_nombre">Nombre del restaurante</string>
     <string name="msg_localizacion">Provincia, Cantón</string>
