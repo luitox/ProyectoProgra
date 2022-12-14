@@ -17,8 +17,10 @@ data class Hotel(
     //@ColumnInfo(name="web")
     val precio: String,
     //@ColumnInfo(name="telefono")
-    val telefono: String?
+    val telefono: String?,
+
+    val creador: String?
 ) : Parcelable{
     constructor():
-            this("","","","","")
+            this("","","","","","")
 }

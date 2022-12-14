@@ -29,17 +29,13 @@ class RestauranteDao {
         if(restaurante.id.isEmpty()){
             //agregar
             document = firestore.
-            collection("restaurantesApp").
-            document(codigoUsuario).
-            collection("misRestaurantes").
+            collection("restaurantesDB").
             document()
             restaurante.id = document.id
         }else{
             //modificar
             document = firestore.
-            collection("restaurantesApp").
-            document(codigoUsuario).
-            collection("misRestaurantes").
+            collection("restaurantesDB").
             document(restaurante.id)
         }
         val set = document.set(restaurante)
@@ -54,9 +50,7 @@ class RestauranteDao {
     fun deleteRestaurante(restaurante: Restaurante){
         if(restaurante.id.isNotEmpty()){
             firestore.
-            collection("restaurantesApp").
-            document(codigoUsuario).
-            collection("misRestaurantes").
+            collection("restaurantesDB").
             document(restaurante.id).
             delete()
                 .addOnSuccessListener{
@@ -71,9 +65,7 @@ class RestauranteDao {
     fun getRestaurantes() : MutableLiveData<List<Restaurante>> {
         val listaRestaurantes = MutableLiveData<List<Restaurante>>()
         firestore.
-        collection("restaurantesApp").
-        document(codigoUsuario).
-        collection("misRestaurantes").
+        collection("restaurantesDB").
         addSnapshotListener{ snapshot, e ->
             if(e != null){
                 return@addSnapshotListener

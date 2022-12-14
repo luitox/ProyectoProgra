@@ -15,6 +15,8 @@ import com.example.proyecto.model.Hotel
 import com.example.proyecto.viewmodel.RestauranteViewModel
 import com.example.proyecto.model.Restaurante
 import com.example.proyecto.viewmodel.HotelViewModel
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 class AddHotelFragment : Fragment() {
 
@@ -42,8 +44,10 @@ class AddHotelFragment : Fragment() {
             val localizacion=binding.etLocalizacion.text.toString()
             val precio=binding.etPrecio.text.toString()
             val telefono=binding.etTelefono.text.toString()
+            val usuario = Firebase.auth.currentUser?.email
+            val codigoUsuario = "$usuario"
 
-            val hotel = Hotel("",nombre,localizacion,precio,telefono)
+            val hotel = Hotel("",nombre,localizacion,precio,telefono,codigoUsuario)
             hotelViewModel.addHotel(hotel)
             Toast.makeText(requireContext(),getString(R.string.msg_hotel_added),
                 Toast.LENGTH_SHORT).show()

@@ -31,17 +31,15 @@ class HotelDao {
         if(hotel.id.isEmpty()){
             //agregar
             document = firestore.
-            collection("hotelesApp").
-            document(codigoUsuario).
-            collection("misHoteles").
+            collection("hotelesDB").
+
             document()
             hotel.id = document.id
         }else{
             //modificar
             document = firestore.
-            collection("hotelesApp").
-            document(codigoUsuario).
-            collection("misHoteles").
+            collection("hotelesDB").
+
             document(hotel.id)
         }
         val set = document.set(hotel)
@@ -56,9 +54,8 @@ class HotelDao {
     fun deleteHotel(hotel: Hotel){
         if(hotel.id.isNotEmpty()){
             firestore.
-            collection("hotelesApp").
-            document(codigoUsuario).
-            collection("misHoteles").
+            collection("hotelesDB").
+
             document(hotel.id).
             delete()
                 .addOnSuccessListener{
@@ -73,9 +70,8 @@ class HotelDao {
     fun getHotel() : MutableLiveData<List<Hotel>> {
         val listaHoteles = MutableLiveData<List<Hotel>>()
         firestore.
-        collection("hotelesApp").
-        document(codigoUsuario).
-        collection("misHoteles").
+        collection("hotelesDB").
+
         addSnapshotListener{ snapshot, e ->
             if(e != null){
                 return@addSnapshotListener

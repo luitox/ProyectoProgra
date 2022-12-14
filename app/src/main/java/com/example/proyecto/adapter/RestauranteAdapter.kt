@@ -23,6 +23,7 @@ class RestauranteAdapter: RecyclerView.Adapter<RestauranteAdapter.RestauranteVie
             itemBinding.tvCocina.text = restaurante.cocina
             itemBinding.tvTelefono.text = restaurante.telefono
 
+
             //evento edit
             itemBinding.vistaFila.setOnClickListener {
                 val accion = RestauranteFragmentDirections
