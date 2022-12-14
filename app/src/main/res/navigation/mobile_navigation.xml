@@ -88,6 +88,9 @@
             app:destination="@id/nav_restaurante" />
         <argument android:name="restaurante"
             app:argType="com.example.proyecto.model.Restaurante"/>
+        <action
+            android:id="@+id/action_updateRestauranteFragment_to_nav_reserva"
+            app:destination="@id/nav_reserva" />
     </fragment>
     <fragment
         android:id="@+id/addReservaFragment"

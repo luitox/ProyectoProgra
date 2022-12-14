@@ -53,13 +53,28 @@
         android:textColor="#FFFFFF"
         app:iconTint="#2196F3" />
 
-    <Button
-        android:id="@+id/bt_reservar"
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:layout_width="373dp"
         android:layout_height="wrap_content"
-        android:backgroundTint="#E91E63"
-        android:text="@string/bt_reservar"
-        android:textColor="#FFFFFF"
-        app:iconTint="#2196F9" />
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/et_fecha"
+            android:layout_width="158dp"
+            android:layout_height="48dp"
+            android:ems="10"
+            android:hint="DD/MM/YYYY"
+            android:inputType="datetime" />
+
+        <Button
+            android:id="@+id/bt_reservar"
+            android:layout_width="213dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#E91E63"
+            android:text="@string/bt_reservar"
+            android:textColor="#FFFFFF"
+            app:iconTint="#2196F9" />
+
+    </LinearLayout>
 
 </LinearLayout>

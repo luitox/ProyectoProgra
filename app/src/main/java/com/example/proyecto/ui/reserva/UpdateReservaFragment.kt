@@ -39,7 +39,7 @@ class UpdateReservaFragment : Fragment() {
         binding.etLugar.setText(args.reserva.lugar)
         binding.etFecha.setText(args.reserva.fecha)
         binding.etDias.setText(args.reserva.dias.toString())
-        binding.etTotal.setText(args.reserva.total.toString())
+        binding.etTotal.setText("Precio Total:" + args.reserva.total.toString())
 
         binding.btUpdate.setOnClickListener{ updateReserva() }
 

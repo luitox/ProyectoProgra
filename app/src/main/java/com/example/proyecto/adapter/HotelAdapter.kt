@@ -23,7 +23,7 @@ class HotelAdapter: RecyclerView.Adapter<HotelAdapter.HotelViewHolder>() {
         fun dibujar(hotel: Hotel) {
             itemBinding.tvNombre.text = hotel.nombre
             itemBinding.tvLocalizacion.text = hotel.localizacion
-            itemBinding.tvCocina.text = hotel.precio
+            itemBinding.tvCocina.text = hotel.precio + "$ x noche"
             itemBinding.tvTelefono.text = hotel.telefono
 
             //evento edit

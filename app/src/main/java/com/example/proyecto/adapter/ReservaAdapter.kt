@@ -21,10 +21,16 @@ class ReservaAdapter: RecyclerView.Adapter<ReservaAdapter.ReservaViewHolder>() {
         RecyclerView.ViewHolder(itemBinding.root){
 
         fun dibujar(reserva: Reserva) {
-            itemBinding.tvLugar.text = reserva.lugar
-            itemBinding.tvFecha.text = reserva.fecha
-            itemBinding.tvDias.text = reserva.dias.toString()
-            itemBinding.tvTotal.text = reserva.total.toString()
+
+            if(reserva.total.toString().equals("null")){
+                itemBinding.tvLugar.text = "Lugar: " + reserva.lugar
+                itemBinding.tvFecha.text = "Fecha: " + reserva.fecha
+            }else{
+                itemBinding.tvLugar.text = "Lugar: " + reserva.lugar
+                itemBinding.tvFecha.text = "Fecha: " + reserva.fecha
+                itemBinding.tvDias.text = "Día/s: " + reserva.dias.toString()
+                itemBinding.tvTotal.text = "Total: " + reserva.total.toString()
+            }
 
             //evento edit
             itemBinding.vistaFila.setOnClickListener {

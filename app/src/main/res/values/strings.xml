@@ -25,7 +25,7 @@
     <string name="bt_reservar">Reservar</string>
     <string name="msg_restaurante_added">Restaurante agregado</string>
     <string name="msg_restaurante_updated">Restaurante actualizado</string>
-    <string name="msg_reserva_added">Reserva actualizado</string>
+    <string name="msg_reserva_added">Reserva registrada</string>
     <string name="msg_reserva_updated">Reserva actualizado</string>
     <string name="msg_data">Faltan datos!!</string>
     <string name="fb_agregar">Agregar Lista</string>
@@ -36,7 +36,7 @@
     <string name="si">SÍ</string>
     <string name="no">NO</string>
     <string name="seguroBorrar">¿Deseas borrar </string>
-    <string name="msg_precio">precio</string>
+    <string name="msg_precio">Precio x noche</string>
     <string name="msg_Precio">Precio</string>
     <string name="msg_NombreH">Nombre del Hotel</string>
     <string name="menu_hotel">Hoteles</string>
