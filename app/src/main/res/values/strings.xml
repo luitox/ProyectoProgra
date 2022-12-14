@@ -28,6 +28,7 @@
     <string name="msg_reserva_added">Reserva registrada</string>
     <string name="msg_reserva_updated">Reserva actualizado</string>
     <string name="msg_data">Faltan datos!!</string>
+    <string name="msg_nocreador">No eres el creador!!</string>
     <string name="fb_agregar">Agregar Lista</string>
     <string name="menu_delete">Restaurante</string>
 

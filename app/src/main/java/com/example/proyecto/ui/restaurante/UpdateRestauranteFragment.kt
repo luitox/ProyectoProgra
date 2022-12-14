@@ -14,6 +14,8 @@ import com.example.proyecto.model.Reserva
 import com.example.proyecto.model.Restaurante
 import com.example.proyecto.viewmodel.ReservaViewModel
 import com.example.proyecto.viewmodel.RestauranteViewModel
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 class UpdateRestauranteFragment : Fragment() {
 
@@ -58,6 +60,8 @@ class UpdateRestauranteFragment : Fragment() {
         val localizacion = binding.etLocalizacion.text.toString()
         val cocina = binding.etCocina.text.toString()
         val telefono = binding.etTelefono.text.toString()
+        val usuario = Firebase.auth.currentUser?.email
+        val codigoUsuario = "$usuario"
         if(nombre.isEmpty()){
             Toast.makeText(requireContext(),getString(R.string.msg_data),Toast.LENGTH_LONG).show()
         }
@@ -65,10 +69,15 @@ class UpdateRestauranteFragment : Fragment() {
             Toast.makeText(requireContext(),getString(R.string.msg_data),Toast.LENGTH_LONG).show()
         }
         else{
-            val restaurante = Restaurante(args.restaurante.id,nombre,localizacion,cocina,telefono)
-            restauranteViewModel.updateRestaurante(restaurante)
-            Toast.makeText(requireContext(),getString(R.string.msg_restaurante_updated),Toast.LENGTH_LONG).show()
-            findNavController().navigate(R.id.action_updateRestauranteFragment_to_nav_restaurante)
+            if(args.restaurante.creador.equals(codigoUsuario)){
+                val restaurante = Restaurante(args.restaurante.id,nombre,localizacion,cocina,telefono,codigoUsuario)
+                restauranteViewModel.updateRestaurante(restaurante)
+                Toast.makeText(requireContext(),getString(R.string.msg_restaurante_updated),Toast.LENGTH_LONG).show()
+                findNavController().navigate(R.id.action_updateRestauranteFragment_to_nav_restaurante)
+            }else{
+                Toast.makeText(requireContext(),getString(R.string.msg_nocreador),Toast.LENGTH_LONG).show()
+            }
+
         }
     }
 

@@ -17,6 +17,8 @@ import com.example.proyecto.model.Restaurante
 import com.example.proyecto.viewmodel.HotelViewModel
 import com.example.proyecto.viewmodel.ReservaViewModel
 import com.example.proyecto.viewmodel.RestauranteViewModel
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 class UpdateHotelFragment : Fragment() {
 
@@ -60,6 +62,8 @@ class UpdateHotelFragment : Fragment() {
         val localizacion = binding.etLocalizacion.text.toString()
         val cocina = binding.etPrecio.text.toString()
         val telefono = binding.etTelefono.text.toString()
+        val usuario = Firebase.auth.currentUser?.email
+        val codigoUsuario = "$usuario"
         if(nombre.isEmpty()){
             Toast.makeText(requireContext(),getString(R.string.msg_data),Toast.LENGTH_LONG).show()
         }
@@ -67,10 +71,15 @@ class UpdateHotelFragment : Fragment() {
             Toast.makeText(requireContext(),getString(R.string.msg_data),Toast.LENGTH_LONG).show()
         }
         else{
-            val hotel = Hotel(args.hotel.id,nombre,localizacion,cocina,telefono)
-            hotelViewModel.updateHotel(hotel)
-            Toast.makeText(requireContext(),getString(R.string.msg_restaurante_updated),Toast.LENGTH_LONG).show()
-            findNavController().navigate(R.id.action_updateHotelFragment_to_nav_hotel)
+            if(args.hotel.creador.equals(codigoUsuario)){
+                val hotel = Hotel(args.hotel.id,nombre,localizacion,cocina,telefono,codigoUsuario)
+                hotelViewModel.updateHotel(hotel)
+                Toast.makeText(requireContext(),getString(R.string.msg_restaurante_updated),Toast.LENGTH_LONG).show()
+                findNavController().navigate(R.id.action_updateHotelFragment_to_nav_hotel)
+            }else{
+                Toast.makeText(requireContext(),getString(R.string.msg_nocreador),Toast.LENGTH_LONG).show()
+            }
+
         }
     }
 

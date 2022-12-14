@@ -17,8 +17,10 @@ data class Restaurante(
     //@ColumnInfo(name="web")
     val cocina: String,
     //@ColumnInfo(name="telefono")
-    val telefono: String?
+    val telefono: String?,
+
+    val creador: String?
 ) : Parcelable{
     constructor():
-            this("","","","","")
+            this("","","","","","")
 }

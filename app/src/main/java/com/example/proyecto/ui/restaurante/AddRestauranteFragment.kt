@@ -12,6 +12,8 @@ import com.example.proyecto.R
 import com.example.proyecto.databinding.FragmentAddRestauranteBinding
 import com.example.proyecto.viewmodel.RestauranteViewModel
 import com.example.proyecto.model.Restaurante
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 class AddRestauranteFragment : Fragment() {
 
@@ -39,8 +41,10 @@ class AddRestauranteFragment : Fragment() {
             val localizacion=binding.etLocalizacion.text.toString()
             val cocina=binding.etCocina.text.toString()
             val telefono=binding.etTelefono.text.toString()
+            val usuario = Firebase.auth.currentUser?.email
+            val codigoUsuario = "$usuario"
 
-            val restaurante = Restaurante("",nombre,localizacion,cocina,telefono)
+            val restaurante = Restaurante("",nombre,localizacion,cocina,telefono,codigoUsuario)
             restauranteViewModel.addRestaurante(restaurante)
             Toast.makeText(requireContext(),getString(R.string.msg_restaurante_added),
                 Toast.LENGTH_SHORT).show()
