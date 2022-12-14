@@ -6,42 +6,42 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="20dp"
-    tools:context=".ui.restaurante.UpdateRestauranteFragment">
+    tools:context=".ui.reserva.UpdateReservaFragment">
 
     <EditText
-        android:id="@+id/et_nombre"
+        android:id="@+id/et_lugar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="@string/msg_nombre"
-        android:inputType="textPersonName"
+        android:hint="@string/msg_lugar"
+        android:inputType="text"
         android:minHeight="48dp" />
 
     <EditText
-        android:id="@+id/et_localizacion"
+        android:id="@+id/et_fecha"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="@string/msg_localizacion"
-        android:inputType="textPersonName"
+        android:hint="@string/msg_fecha"
+        android:inputType="text"
         android:minHeight="48dp" />
 
     <EditText
-        android:id="@+id/et_cocina"
+        android:id="@+id/et_dias"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="@string/msg_cocina"
-        android:inputType="textPersonName"
+        android:hint="@string/msg_dias"
+        android:inputType="number"
         android:minHeight="48dp" />
 
     <EditText
-        android:id="@+id/et_telefono"
+        android:id="@+id/et_total"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="@string/msg_telefono"
-        android:inputType="phone"
+        android:hint="@string/msg_total"
+        android:inputType="number"
         android:minHeight="48dp" />
 
     <Button
@@ -53,13 +53,5 @@
         android:textColor="#FFFFFF"
         app:iconTint="#2196F3" />
 
-    <Button
-        android:id="@+id/bt_reservar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#E91E63"
-        android:text="@string/bt_reservar"
-        android:textColor="#FFFFFF"
-        app:iconTint="#2196F9" />
 
 </LinearLayout>

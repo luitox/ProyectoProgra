@@ -12,8 +12,9 @@
 
 
     <string name="menu_restaurante">Restaurantes</string>
-    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_reservas">Mis Reservas</string>
     <string name="menu_ic_hotel">Hoteles</string>
+    <string name="menu_home">Home</string>
 
     <string name="msg_nombre">Nombre del restaurante</string>
     <string name="msg_localizacion">Provincia, Cantón</string>
@@ -21,8 +22,11 @@
     <string name="msg_telefono">Teléfono</string>
     <string name="msg_cocina">Tipo de Cocina</string>
     <string name="bt_agregar">Agregar</string>
+    <string name="bt_reservar">Reservar</string>
     <string name="msg_restaurante_added">Restaurante agregado</string>
     <string name="msg_restaurante_updated">Restaurante actualizado</string>
+    <string name="msg_reserva_added">Reserva actualizado</string>
+    <string name="msg_reserva_updated">Reserva actualizado</string>
     <string name="msg_data">Faltan datos!!</string>
     <string name="fb_agregar">Agregar Lista</string>
     <string name="menu_delete">Restaurante</string>
@@ -38,4 +42,8 @@
     <string name="menu_hotel">Hoteles</string>
     <string name="msg_hotel_added">Hotel agregado</string>
     <string name="msg_hotel_updated">Hotel actualizado</string>
+    <string name="msg_lugar">Lugar</string>
+    <string name="msg_fecha">Fecha</string>
+    <string name="msg_dias">Días</string>
+    <string name="msg_total">Total</string>
 </resources>

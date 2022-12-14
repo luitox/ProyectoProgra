@@ -38,10 +38,17 @@
     </fragment>
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.example.proyecto.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/nav_reserva"
+        android:name="com.example.proyecto.ui.reserva.ReservaFragment"
+        android:label="@string/menu_reservas"
+        tools:layout="@layout/fragment_reserva" >
+        <action
+            android:id="@+id/action_nav_reserva_to_addReservaFragment"
+            app:destination="@id/addReservaFragment" />
+        <action
+            android:id="@+id/action_nav_reserva_to_updateReservaFragment"
+            app:destination="@id/updateReservaFragment" />
+    </fragment>
     <fragment
         android:id="@+id/addHotelFragment"
         android:name="com.example.proyecto.ui.hotel.AddHotelFragment"
@@ -81,5 +88,25 @@
             app:destination="@id/nav_restaurante" />
         <argument android:name="restaurante"
             app:argType="com.example.proyecto.model.Restaurante"/>
+    </fragment>
+    <fragment
+        android:id="@+id/addReservaFragment"
+        android:name="com.example.proyecto.ui.reserva.AddReservaFragment"
+        android:label="fragment_add_reserva"
+        tools:layout="@layout/fragment_add_reserva" >
+        <action
+            android:id="@+id/action_addReservaFragment_to_nav_reserva"
+            app:destination="@id/nav_reserva" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateReservaFragment"
+        android:name="com.example.proyecto.ui.reserva.UpdateReservaFragment"
+        android:label="fragment_update_reserva"
+        tools:layout="@layout/fragment_update_reserva" >
+        <action
+            android:id="@+id/action_updateReservaFragment_to_nav_reserva"
+            app:destination="@id/nav_reserva" />
+        <argument android:name="reserva"
+            app:argType="com.example.proyecto.model.Reserva"/>
     </fragment>
 </navigation>
