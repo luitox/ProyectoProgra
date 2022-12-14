@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.proyecto.databinding.HotelFilaBinding
 import com.example.proyecto.databinding.RestauranteFilaBinding
 import com.example.proyecto.model.Hotel
+import com.example.proyecto.ui.hotel.HotelFragmentDirections
 import com.example.proyecto.model.Restaurante
 import com.example.proyecto.ui.restaurante.RestauranteFragmentDirections
 import com.example.proyecto.ui.restaurante.UpdateRestauranteFragmentDirections
@@ -22,7 +23,7 @@ class HotelAdapter: RecyclerView.Adapter<HotelAdapter.HotelViewHolder>() {
         fun dibujar(hotel: Hotel) {
             itemBinding.tvNombre.text = hotel.nombre
             itemBinding.tvLocalizacion.text = hotel.localizacion
-            itemBinding.tvCocina.text = hotel.precio
+            itemBinding.tvCocina.text = hotel.precio + "$ x noche"
             itemBinding.tvTelefono.text = hotel.telefono
 
             //evento edit

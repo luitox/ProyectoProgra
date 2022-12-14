@@ -53,4 +53,36 @@
         android:textColor="#FFFFFF"
         app:iconTint="#2196F3" />
 
+    <LinearLayout
+        android:layout_width="373dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/et_fecha"
+            android:layout_width="158dp"
+            android:layout_height="48dp"
+            android:ems="10"
+            android:hint="DD/MM/YYYY"
+            android:inputType="datetime" />
+
+        <EditText
+            android:id="@+id/et_dias"
+            android:layout_width="75dp"
+            android:layout_height="48dp"
+            android:ems="10"
+            android:hint="Días"
+            android:inputType="number" />
+
+        <Button
+            android:id="@+id/bt_reservar"
+            android:layout_width="139dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#E91E63"
+            android:text="@string/bt_reservar"
+            android:textColor="#FFFFFF"
+            app:iconTint="#2196F9" />
+
+    </LinearLayout>
+
 </LinearLayout>

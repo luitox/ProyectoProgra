@@ -1,4 +1,4 @@
-package com.example.proyecto.ui.hotel
+package com.example.proyecto.ui.reserva
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,14 +10,14 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.proyecto.R
-import com.example.proyecto.adapter.HotelAdapter
-import com.example.proyecto.databinding.FragmentHotelBinding
-import com.example.proyecto.viewmodel.HotelViewModel
+import com.example.proyecto.adapter.ReservaAdapter
+import com.example.proyecto.databinding.FragmentReservaBinding
+import com.example.proyecto.viewmodel.ReservaViewModel
 
-class HotelFragment : Fragment() {
+class ReservaFragment : Fragment() {
 
-    private lateinit var  hotelViewModel: HotelViewModel
-    private var _binding: FragmentHotelBinding? = null
+    private lateinit var  reservaViewModel: ReservaViewModel
+    private var _binding: FragmentReservaBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -28,21 +28,21 @@ class HotelFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        hotelViewModel =
-            ViewModelProvider(this)[HotelViewModel::class.java]
-        _binding = FragmentHotelBinding.inflate(inflater, container, false)
+        reservaViewModel =
+            ViewModelProvider(this)[ReservaViewModel::class.java]
+        _binding = FragmentReservaBinding.inflate(inflater, container, false)
 
         binding.fbAgregar.setOnClickListener{
-            findNavController().navigate(R.id.action_nav_hotel_to_addHotelFragment)  }
+            findNavController().navigate(R.id.action_nav_reserva_to_addReservaFragment)  }
 
         //Cargar datos
-        val hotelAdapter = HotelAdapter()
+        val reservaAdapter = ReservaAdapter()
         val reciclador = binding.reciclador
-        reciclador.adapter  = hotelAdapter
+        reciclador.adapter  = reservaAdapter
         reciclador.layoutManager = LinearLayoutManager(requireContext())
 
-        hotelViewModel.getAllData.observe(viewLifecycleOwner){
-                hoteles -> hotelAdapter.setHoteles(hoteles)
+        reservaViewModel.getAllData.observe(viewLifecycleOwner){
+                reservas -> reservaAdapter.setReservas(reservas)
         }
 
 

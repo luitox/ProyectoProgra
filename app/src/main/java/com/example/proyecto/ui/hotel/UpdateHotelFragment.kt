@@ -12,8 +12,10 @@ import com.example.proyecto.R
 import com.example.proyecto.databinding.FragmentUpdateHotelBinding
 import com.example.proyecto.databinding.FragmentUpdateRestauranteBinding
 import com.example.proyecto.model.Hotel
+import com.example.proyecto.model.Reserva
 import com.example.proyecto.model.Restaurante
 import com.example.proyecto.viewmodel.HotelViewModel
+import com.example.proyecto.viewmodel.ReservaViewModel
 import com.example.proyecto.viewmodel.RestauranteViewModel
 
 class UpdateHotelFragment : Fragment() {
@@ -25,6 +27,8 @@ class UpdateHotelFragment : Fragment() {
     private val binding get() = _binding!!
     private lateinit var hotelViewModel: HotelViewModel
 
+    private lateinit var reservaViewModel: ReservaViewModel //queeeeeeeeeeeeeeeeee
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -35,6 +39,7 @@ class UpdateHotelFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         hotelViewModel = ViewModelProvider(this).get(HotelViewModel :: class.java)
+        reservaViewModel = ViewModelProvider(this).get(ReservaViewModel::class.java) //queeeeeeeeeeeeeeeee
         _binding = FragmentUpdateHotelBinding.inflate(inflater,container,false)
         // Inflate the layout for this fragment
 
@@ -45,7 +50,7 @@ class UpdateHotelFragment : Fragment() {
         binding.etTelefono.setText(args.hotel.telefono)
 
         binding.btUpdate.setOnClickListener{ updateHotel() }
-
+        binding.btReservar.setOnClickListener{ addReserva() } // queeeeeeeeeeeeeeeeeee
         setHasOptionsMenu(true)
         return binding.root
     }
@@ -66,6 +71,26 @@ class UpdateHotelFragment : Fragment() {
             hotelViewModel.updateHotel(hotel)
             Toast.makeText(requireContext(),getString(R.string.msg_restaurante_updated),Toast.LENGTH_LONG).show()
             findNavController().navigate(R.id.action_updateHotelFragment_to_nav_hotel)
+        }
+    }
+
+    private fun addReserva() { //queeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+
+        val nombre = binding.etNombre.text.toString()
+        val fecha = binding.etFecha.text.toString()
+        val dias = binding.etDias.text.toString().toInt()
+        val precio = binding.etPrecio.text.toString().toInt()
+        val total = dias * precio
+
+        if(fecha.isNotEmpty()){
+            val reserva = Reserva("",nombre,fecha,dias,total)
+            reservaViewModel.addReserva(reserva)
+            Toast.makeText(requireContext(),getString(R.string.msg_reserva_added),
+                Toast.LENGTH_SHORT).show()
+            findNavController().navigate(R.id.action_updateHotelFragment_to_nav_hotel)
+        }else {  //No hay info del reserva...
+            Toast.makeText(requireContext(),getString(R.string.msg_data),
+                Toast.LENGTH_LONG).show()
         }
     }
 

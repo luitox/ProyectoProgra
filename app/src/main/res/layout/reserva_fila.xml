@@ -21,14 +21,14 @@
             android:layout_marginTop="32dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_hotel" />
+            app:srcCompat="@drawable/ic_calendar" />
 
         <TextView
-            android:id="@+id/tv_nombre"
+            android:id="@+id/tv_lugar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="@string/msg_nombre"
+            android:text="@string/msg_lugar"
             android:textAlignment="center"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -36,40 +36,41 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/tv_localizacion"
+            android:id="@+id/tv_fecha"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="@string/msg_localizacion"
+            android:text="@string/msg_fecha"
             android:textAlignment="center"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/imagen"
-            app:layout_constraintTop_toBottomOf="@+id/tv_nombre" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_lugar" />
 
         <TextView
-            android:id="@+id/tv_cocina"
+            android:id="@+id/tv_dias"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="@string/msg_cocina"
+
             android:textAlignment="center"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/imagen"
-            app:layout_constraintTop_toBottomOf="@+id/tv_localizacion" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_fecha" />
 
         <TextView
-            android:id="@+id/tv_telefono"
+            android:id="@+id/tv_total"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="@string/msg_telefono"
+
             android:textAlignment="center"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/imagen"
-            app:layout_constraintTop_toBottomOf="@+id/tv_cocina" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_dias" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>
