@@ -11,11 +11,8 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.proyecto.R
 import com.example.proyecto.adapter.HotelAdapter
-import com.example.proyecto.adapter.RestauranteAdapter
 import com.example.proyecto.databinding.FragmentHotelBinding
-import com.example.proyecto.databinding.FragmentRestauranteBinding
 import com.example.proyecto.viewmodel.HotelViewModel
-import com.example.proyecto.viewmodel.RestauranteViewModel
 
 class HotelFragment : Fragment() {
 
